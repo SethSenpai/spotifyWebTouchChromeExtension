@@ -82,16 +82,30 @@ var folded = true;
     }
 
     window.onload = function () { 
-        this.console.log("dom loaded");
-        
-        touchSetup();
-        buttonSetup();
-        updateButtonClasses();
-
+        this.console.log("Dom loaded");
+        var b = a;
+        playControls = document.getElementsByClassName('player-controls__buttons')[0];
         var a = this.document.getElementsByClassName("volume-bar")[0];
         a.classList.add("moveBar");
         this.document.getElementById("volumeContainer").appendChild(a);
         a.remove;
+        //console.log(b);
+
+        while(b == undefined)
+        {       
+        a = this.document.getElementsByClassName("volume-bar")[0];
+        b = a;
+        a.classList.add("moveBar");
+        this.document.getElementById("volumeContainer").appendChild(a);
+        a.remove;
+        playControls = document.getElementsByClassName('player-controls__buttons')[0];
+        this.console.log("looped");
+        }
+
+        touchSetup();
+        buttonSetup();
+        updateButtonClasses();
+        this.console.log("volumebar found! Setup complete!");
     }
 
 
