@@ -5,7 +5,6 @@
 "name": "Spotify Web Tablet Interface",
 "description": "Creates a better touch experience for the spotify web player",
 "version": "1.0",
-//Name,Description & version of your extension
 
 "content_scripts": [
 { "run_at" :"document_end",

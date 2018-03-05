@@ -1,28 +1,32 @@
-var s = document.createElement('script');
+var PageBody = document.getElementsByTagName('body')[0];
+        if(PageBody.className != "login"){
 
-// TODO: add "script.js" to web_accessible_resources in manifest.json
-s.src = chrome.extension.getURL('tabletView.js');
+            var s = document.createElement('script');
 
-s.onload = function() {
-    this.remove();
-};
-(document.head || document.documentElement).appendChild(s);
+            // TODO: add "script.js" to web_accessible_resources in manifest.json
+            s.src = chrome.extension.getURL('tabletView.js');
 
-//load zingtouch
+            s.onload = function() {
+                this.remove();
+            };
+            (document.head || document.documentElement).appendChild(s);
 
-var a = document.createElement('script');
-a.src = chrome.extension.getURL('zingtouch.js');
-a.onload = function() {
-    this.remove();
-};
-(document.head || document.documentElement).appendChild(a);
+            //load zingtouch
 
-var c = document.createElement('link');
-c.href = chrome.extension.getURL('css.css');
-c.rel = "stylesheet";
-(document.head || document.documentElement).appendChild(c);
+            var a = document.createElement('script');
+            a.src = chrome.extension.getURL('zingtouch.js');
+            a.onload = function() {
+                this.remove();
+            };
+            (document.head || document.documentElement).appendChild(a);
 
-var url = chrome.extension.getURL('tabletBody.html');
-    $.get(url, function(html) {
-        $('body').append(html);
-    });
+            var c = document.createElement('link');
+            c.href = chrome.extension.getURL('css.css');
+            c.rel = "stylesheet";
+            (document.head || document.documentElement).appendChild(c);
+
+            var url = chrome.extension.getURL('tabletBody.html');
+                $.get(url, function(html) {
+                    $('body').append(html);
+                });
+            }

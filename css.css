@@ -40,7 +40,7 @@
 }
 
 #foldButton{
-    width: 24px;
+    width: 54px;
     height: 24px;
     position: relative;
     display: block;
@@ -48,17 +48,23 @@
     margin-right: auto;
     background-color: transparent;
     border:0px;
-
-
 }
 
 #foldButton::before{
-    content:"\21A1";
+
     font-size:18px;
-    color: hsla(0,0%,100%,.6);
+    color: rgba(255, 255, 255, 0.877);
     font-family: glue1-spoticon;
     font-style: normal;
     font-weight: 400;
+}
+
+.foldButtonContentDown::before{
+    content:"\21A1";
+}
+
+.foldButtonContentUp::before{
+    content:"\219F";
 }
 
 button:hover{

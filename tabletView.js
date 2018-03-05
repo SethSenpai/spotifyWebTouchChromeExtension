@@ -1,5 +1,7 @@
 var playControls = document.getElementsByClassName('player-controls__buttons')[0];
-var folded = true;
+var htmlBody = document.getElementsByTagName('body')[0];
+console.log(htmlBody);
+var folded = false;
 
     function nextSong(){
         playControls.childNodes[3].click();
@@ -53,11 +55,15 @@ var folded = true;
         if(folded){
             folded = false;
             document.getElementById('tabletview').style.bottom = '-675px';
+            a.classList.remove("foldButtonContentDown");
+            a.classList.add("foldButtonContentUp");
             console.log("fold down");
         }
         else{
             folded = true;
             document.getElementById('tabletview').style.bottom = '0px';
+            a.classList.remove("foldButtonContentUp");
+            a.classList.add("foldButtonContentDown");
             console.log("fold up");
         }
     }
@@ -81,32 +87,39 @@ var folded = true;
         });
     }
 
-    window.onload = function () { 
-        this.console.log("Dom loaded");
-        var b = a;
-        playControls = document.getElementsByClassName('player-controls__buttons')[0];
-        var a = this.document.getElementsByClassName("volume-bar")[0];
-        a.classList.add("moveBar");
-        this.document.getElementById("volumeContainer").appendChild(a);
-        a.remove;
-        //console.log(b);
+    htmlBody.onload = function () { 
+            this.console.log("Dom loaded");            
+            playControls = document.getElementsByClassName('player-controls__buttons')[0];
+            var a = this.document.getElementsByClassName("volume-bar")[0];
+            var b = a;
+            if(b != undefined){
+                a.classList.add("moveBar");
+                this.document.getElementById("volumeContainer").appendChild(a);
+                a.remove;
+            }
 
-        while(b == undefined)
-        {       
-        a = this.document.getElementsByClassName("volume-bar")[0];
-        b = a;
-        a.classList.add("moveBar");
-        this.document.getElementById("volumeContainer").appendChild(a);
-        a.remove;
-        playControls = document.getElementsByClassName('player-controls__buttons')[0];
-        this.console.log("looped");
-        }
+            setTimeout(checkElementsLoaded,200);
 
-        touchSetup();
-        buttonSetup();
-        updateButtonClasses();
-        this.console.log("volumebar found! Setup complete!");
-    }
+            //console.log(b);
+            function checkElementsLoaded(){
+                console.log("checking elements");
+                a = this.document.getElementsByClassName("volume-bar")[0];
+                b = a;
+                if(b != undefined){
+                    a.classList.add("moveBar");
+                    this.document.getElementById("volumeContainer").appendChild(a);
+                    a.remove;
+                    playControls = document.getElementsByClassName('player-controls__buttons')[0];
+                    touchSetup();
+                    buttonSetup();
+                    updateButtonClasses();
+                    console.log("elements found, setup complete!");
+                }
+                else{
+                    setTimeout(checkElementsLoaded,200);
+                }
+            }
+            }
 
 
     
