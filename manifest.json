@@ -1,0 +1,22 @@
+{
+"manifest_version": 2,
+
+
+"name": "Spotify Web Tablet Interface",
+"description": "Creates a better touch experience for the spotify web player",
+"version": "1.0",
+//Name,Description & version of your extension
+
+"content_scripts": [
+{ "run_at" :"document_end",
+"matches": ["https://open.spotify.com/*"],
+"js": ["jquery-3.3.1.min.js","script.js"]
+} ],
+
+"browser_action": {
+    //"default_icon": "icon.png",
+    //"default_popup": "popup.html"
+  },
+
+"web_accessible_resources":["img/*.png" , "tabletView.js" , "tabletBody.html" , "zingtouch.min.js" , "zingtouch.js" ,"css.css"]
+}
