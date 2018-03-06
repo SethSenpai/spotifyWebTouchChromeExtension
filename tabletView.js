@@ -62,7 +62,7 @@ var folded = false;
                 if(i != undefined){
                     j.innerHTML = i.childNodes[0].childNodes[0].childNodes[0].innerHTML;
                 }
-            }, 50) ;
+            }, 100) ;
 
         
     }
@@ -104,18 +104,18 @@ var folded = false;
         
         
         myRegion.bind(touchArea, 'swipe', function(e){
-            //console.log(e.detail);
+            console.log(e.detail);
             var dir = e.detail.data[0].currentDirection;
-            if(dir < 20 || dir > 340){
-                //console.log("swipe right");
+            if(dir < 30 || dir > 330){
+                console.log("swipe right");
                 prevSong();
             }
-            else if(dir > 160 && dir < 200){
-                //console.log("swipe left");
+            else if(dir > 140 && dir < 210){
+                console.log("swipe left");
                 nextSong();
             }
-            else if(dir > 260 && dir < 280){
-                //console.log("swipe down");
+            else if(dir > 250 && dir < 290){
+                console.log("swipe down");
                 foldInterface();
             }
         });
