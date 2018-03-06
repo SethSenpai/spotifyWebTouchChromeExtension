@@ -28,6 +28,8 @@ var folded = false;
         var b = document.getElementById("playButton");
         var c = document.getElementById("shuffleButton");
         var d = document.getElementById("repeatButton");
+        var e = document.getElementById('remotePlayText');
+        var f = document.getElementsByClassName('connect-bar__device-name')[0];
             setInterval(function () {
             b.className = a.childNodes[2].className;
             b.classList.add("biggerIcons");
@@ -37,7 +39,18 @@ var folded = false;
             d.className = a.childNodes[4].className;
             d.classList.add("biggerIcons");
             d.classList.add("greenBoy");
+            
+            f = document.getElementsByClassName('connect-bar__device-name')[0];
+            if(f != undefined){
+                e.innerHTML = f.innerHTML;
+            }
+            else{
+                e.innerHTML = "Playing from webpage";
+            }          
+
             }, 50) ;
+
+        
     }
 
     function buttonSetup(){
