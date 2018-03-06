@@ -30,6 +30,10 @@ var folded = false;
         var d = document.getElementById("repeatButton");
         var e = document.getElementById('remotePlayText');
         var f = document.getElementsByClassName('connect-bar__device-name')[0];
+        var g = document.getElementsByClassName('track-info__name ellipsis-one-line')[0];
+        var h = document.getElementById('trackName');
+        var i = document.getElementsByClassName('track-info__artists link-subtle ellipsis-one-line')[0];
+        var j = document.getElementById('trackArtists');
             setInterval(function () {
             b.className = a.childNodes[2].className;
             b.classList.add("biggerIcons");
@@ -46,7 +50,18 @@ var folded = false;
             }
             else{
                 e.innerHTML = "Playing from webpage";
-            }          
+            }
+            
+            g = document.getElementsByClassName('track-info__name ellipsis-one-line')[0];
+            if(g != undefined){
+                h.innerHTML = g.childNodes[0].childNodes[0].innerHTML;
+            }
+            
+            i = document.getElementsByClassName('track-info__artists link-subtle ellipsis-one-line')[0];
+            if(i != undefined){
+                j.innerHTML = i.childNodes[0].childNodes[0].childNodes[0].innerHTML;
+            }
+
 
             }, 50) ;
 
@@ -91,11 +106,11 @@ var folded = false;
             var dir = e.detail.data[0].currentDirection;
             if(dir < 20 || dir > 340){
                 console.log("swipe right");
-                nextSong();
+                prevSong();
             }
             else if(dir > 160 || dir < 200){
                 console.log("swipe left");
-                prevSong();
+                nextSong();
             }
         });
     }

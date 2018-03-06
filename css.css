@@ -78,3 +78,32 @@ button:hover{
     display: block;
     width:656px;
 }
+
+#trackName{
+    display: block;
+    margin-left: auto;
+    margin-right:auto;
+    width: 700px;
+    font-size: 60px;
+    text-align: center;
+    color:hsla(0,0%,100%,.85)
+}
+
+#trackArtists{
+    display:block;
+    margin-left: auto;
+    margin-right:auto;
+    text-align: center;
+    width: 700px;
+    font-size:40px;
+}
+
+#trackAlbum{
+    display:block;
+    margin-left: auto;
+    margin-right:auto;
+    text-align: center;
+    width: 700px;
+    font-size:30px;
+    color:hsla(0,0%,100%,.45)
+}
