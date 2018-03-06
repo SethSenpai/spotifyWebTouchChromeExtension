@@ -17,5 +17,5 @@
     //"default_popup": "popup.html"
   },
 
-"web_accessible_resources":["img/*.png" , "tabletView.js" , "tabletBody.html" , "zingtouch.min.js" , "zingtouch.js" ,"css.css"]
+"web_accessible_resources":["img/*.png" , "tabletView.js" , "tabletBody.html" , "zingtouch.min.js" , "css.css"]
 }
