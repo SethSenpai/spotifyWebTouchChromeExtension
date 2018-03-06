@@ -108,9 +108,13 @@ var folded = false;
                 console.log("swipe right");
                 prevSong();
             }
-            else if(dir > 160 || dir < 200){
+            else if(dir > 160 && dir < 200){
                 console.log("swipe left");
                 nextSong();
+            }
+            else if(dir > 260 && dir < 280){
+                console.log("swipe down");
+                foldInterface();
             }
         });
     }

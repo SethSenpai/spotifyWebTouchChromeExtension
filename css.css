@@ -45,6 +45,7 @@
     position: relative;
     display: block;
     margin-left: auto;
+    margin-top:-20px;
     margin-right: auto;
     background-color: transparent;
     border:0px;
